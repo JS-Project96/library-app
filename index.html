@@ -16,35 +16,32 @@
             <button class="add-book">New Book</button>
         </div>
         <main class="main-grid-container">
-            <div class="book-card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Pages</div>
-                <button>Read/Unread</button>
-                <button>Remove Book</button>
-            </div>
-            <div class="book-card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Pages</div>
-                <button>Read/Unread</button>
-                <button>Remove Book</button>
-            </div>
-            <div class="book-card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Pages</div>
-                <button>Read/Unread</button>
-                <button>Remove Book</button>
-            </div>
-            <div class="book-card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Pages</div>
-                <button>Read/Unread</button>
-                <button>Remove Book</button>
-            </div>
+        
         </main>
+
+        <dialog open>
+            <form>
+                <ul>
+                    <li>
+                        <label id="title">Title</label>
+                        <input type="text" id="title" name="title">
+                    </li>
+                    <li>
+                        <label id="author">Author</label>
+                        <input type="text" id="author" name="author">
+                    </li>
+                    <li>
+                        <label id="pages">Number of Pages</label>
+                        <input type="number" id="pages" name="pages">
+                    </li>
+                    <li>
+                        <label id="read">Finished reading?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </li>
+                </ul>
+                <button type="submit">Add Book</button>
+            </form>
+        </dialog>
     </div>
 </body>
 </html>
