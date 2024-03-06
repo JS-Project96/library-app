@@ -24,7 +24,7 @@ function displayBooks(bookArray) {
         const book = document.createElement('div'); // creates book container
         book.classList.add('book-card'); // adds book-card styling class to newly created book
         
-
+        // Creates each text div for the book card
         const title = document.createElement('div');
         const titleText = document.createTextNode(`${bookArray[i].title}`);
         title.appendChild(titleText);
@@ -37,10 +37,12 @@ function displayBooks(bookArray) {
         const pagesText = document.createTextNode(`${bookArray[i].pages} pages`);
         pages.appendChild(pagesText);
         
+        // Adds created divs to a book card
         book.appendChild(title);
         book.appendChild(author);
         book.appendChild(pages);
 
+        // Adds completed book card to html to display to user
         books.appendChild(book);
     }
 }
