@@ -33,3 +33,34 @@ header {
     justify-content: space-around;
     border-radius: 15px;
 }
+
+/* Dialog */
+
+
+dialog {
+    border-radius: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form > ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.form > ul > li {
+    display: flex;
+    flex-direction: column;
+}
+
+#checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
