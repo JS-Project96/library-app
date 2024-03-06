@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
+    height: 90vh;
 }
 
 header {
@@ -11,4 +12,16 @@ header {
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 2 / 5;
+}
+
+.book-card {
+    height: 200px;
+    width: 200px;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
 }
