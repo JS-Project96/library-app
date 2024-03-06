@@ -1,7 +1,7 @@
 .page-grid-container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 6fr;
     height: 90vh;
 }
 
@@ -9,9 +9,8 @@ header {
     grid-column: 1 / 3;
 }
 
-.sidebar {
-    grid-column: 1 / 2;
-    grid-row: 2 / 5;
+.sub-header {
+    grid-column: 1 / 3;
 }
 
 
