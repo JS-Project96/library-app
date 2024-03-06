@@ -36,11 +36,21 @@ function displayBooks(bookArray) {
         const pages = document.createElement('div');
         const pagesText = document.createTextNode(`${bookArray[i].pages} pages`);
         pages.appendChild(pagesText);
+
+        const read = document.createElement('button');
+        const readText = document.createTextNode('Read/Unread');
+        read.appendChild(readText);
+
+        const remove = document.createElement('button');
+        const removeText = document.createTextNode('Remove Book');
+        remove.appendChild(removeText);
         
         // Adds created divs to a book card
         book.appendChild(title);
         book.appendChild(author);
         book.appendChild(pages);
+        book.appendChild(read);
+        book.appendChild(remove);
 
         // Adds completed book card to html to display to user
         books.appendChild(book);
