@@ -1,4 +1,4 @@
-.grid-container {
+.page-grid-container {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
@@ -14,9 +14,20 @@ header {
     grid-row: 2 / 5;
 }
 
+
+/* Main Section */
+
+.main-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 5% 5%;
+    gap: 20px;
+}
+
 .book-card {
-    height: 200px;
-    width: 200px;
+    /* height: 200px;
+    width: 200px; */
+    margin: 0 5%;
     color: white;
     background-color: black;
     display: flex;
