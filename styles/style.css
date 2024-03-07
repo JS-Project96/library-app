@@ -62,7 +62,21 @@ header > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    border-radius: 15px;
+}
+
+.book-card div {
+    font-size: 20px;
+}
+
+.book-card button {
+    cursor: pointer;
+    font-family: "Madimi One", sans-serif;
+    font-size: 20px;
+    color: #fffbeb;
+    background-color: #78350f;
+    border: solid 3px #fffbeb;
     border-radius: 15px;
 }
 
@@ -92,7 +106,7 @@ dialog[open]::backdrop {
     flex-direction: column;
 }
 
-.form > ul {
+.form ul {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -100,7 +114,7 @@ dialog[open]::backdrop {
     gap: 10px;
 }
 
-.form > ul > li {
+.form ul > li {
     display: flex;
     flex-direction: column;
 }

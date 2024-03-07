@@ -3,10 +3,11 @@ const myLibrary = [];
 
 // Constructor for creating new books
 
-function Book(title, author, pages, read){
+function Book(title, author, pages, rating, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.rating = rating;
     this.read = read;
 }
 
@@ -26,16 +27,20 @@ function displayBooks(bookArray) {
         
         // Creates each text div for the book card
         const title = document.createElement('div');
-        const titleText = document.createTextNode(`${bookArray[i].title}`);
+        const titleText = document.createTextNode(`"${bookArray[i].title}"`);
         title.appendChild(titleText);
 
         const author = document.createElement('div');
-        const authorText = document.createTextNode(`${bookArray[i].author}`);
+        const authorText = document.createTextNode(`by ${bookArray[i].author}`);
         author.appendChild(authorText);
 
         const pages = document.createElement('div');
         const pagesText = document.createTextNode(`${bookArray[i].pages} pages`);
         pages.appendChild(pagesText);
+
+        const rating = document.createElement('div');
+        const ratingText = document.createTextNode(`${bookArray[i].rating} out of 10`);
+        rating.appendChild(ratingText);
 
         const read = document.createElement('button');
         const readText = document.createTextNode('Read/Unread');
@@ -49,6 +54,7 @@ function displayBooks(bookArray) {
         book.appendChild(title);
         book.appendChild(author);
         book.appendChild(pages);
+        book.appendChild(rating);
         book.appendChild(read);
         book.appendChild(remove);
 
