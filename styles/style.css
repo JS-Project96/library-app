@@ -16,7 +16,6 @@ body {
 /* Header */
 
 header {
-    grid-column: 1 / 2;
     background-color: #78350f;
     box-shadow: 0 5px 0px 0px rgb(10, 10, 10, 30%);
     z-index: 2;
@@ -33,7 +32,6 @@ header > div {
 /* Sub Header */
 
 .sub-header {
-    grid-column: 1 / 2;
     text-align: center;
     padding: 10px 0px;
 }
