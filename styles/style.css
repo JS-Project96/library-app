@@ -73,7 +73,18 @@ dialog {
     border-color: #fffbeb;
     background-color: #fed7aa;
     color: #78350f;
-    z-index: 1000;
+}
+
+dialog[open]::backdrop {
+    background-color: rgb(0 0 0 / 55%)
+}
+
+.close-dialog {
+    background-color: #fed7aa;
+    color: #78350f;
+    border: none;
+    cursor: pointer;
+    margin-left: 90%;
 }
 
 .form {
@@ -98,8 +109,4 @@ dialog {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-dialog[open]::backdrop {
-    background-color: rgb(0 0 0 / 55%)
 }

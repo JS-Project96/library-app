@@ -56,3 +56,19 @@ function displayBooks(bookArray) {
         books.appendChild(book);
     }
 }
+
+// Modal dialog pop up
+
+const dialog = document.querySelector("dialog");
+const addBookButton = document.querySelector(".add-book");
+const closeDialogButton = document.querySelector(".close-dialog");
+
+// Opens Modal dialog on add book button
+addBookButton.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+// Close modal dialog on close button
+closeDialogButton.addEventListener("click", () => {
+    dialog.close();
+})
