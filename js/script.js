@@ -43,7 +43,7 @@ function displayBooks(bookArray) {
         rating.appendChild(ratingText);
 
         const read = document.createElement('button');
-        const readText = document.createTextNode('Read/Unread');
+        const readText = document.createTextNode(`${bookArray[i].read}`);
         read.appendChild(readText);
 
         const remove = document.createElement('button');
