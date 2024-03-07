@@ -7,10 +7,12 @@
 
 header {
     grid-column: 1 / 3;
+    background-color: #451a03;
 }
 
 .sub-header {
     grid-column: 1 / 3;
+    background-color: #fed7aa;
 }
 
 
@@ -18,13 +20,13 @@ header {
 
 .main-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin: 5% 5%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
     gap: 20px;
 }
 
 .book-card {
-    margin: 0 5%;
+    height: 300px;
+    margin: 2.5% 5%;
     color: white;
     background-color: black;
     display: flex;
