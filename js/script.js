@@ -17,9 +17,9 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-// helper function for displaying all books in current library away to not produce duplicates
+// helper function for displaying all books in current library array to not produce duplicates
 function removeBooks(){
-    const bookCards = document.querySelectorAll('.book-card');
+    const bookCards = document.querySelectorAll('.book-card'); //creates a array of divs with .book-card class and loops through the array to remove them from the DOM
     for (i = 0; i < bookCards.length; i++) {
         bookCards[i].remove();
     }

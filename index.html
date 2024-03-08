@@ -40,18 +40,18 @@
                         <input type="number" id="pages" name="pages" required>
                     </li>
                     <li>
-                        <label for="Rating">Rating of out 10:</label>
-                        <input type="number" id="rating" name="rating" required>
+                        <label for="rating">Rating of out 10:</label>
+                        <input type="number" id="rating" name="rating" min="0" max="10" required>
                     </li>
                     <li id="radio">
                         <div>Finished reading?</div>
                         
-                        <label>
+                        <label for="read">
                             Y:
                             <input type="radio" id="read" name="read" value="read" checked>
                         </label>
 
-                        <label>
+                        <label for="unread">
                             N:
                             <input type="radio" id="unread" name="read" value="unread">
                         </label>
