@@ -17,9 +17,18 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+// helper function for displaying all books in current library away to not produce duplicates
+function removeBooks(){
+    const bookCards = document.querySelectorAll('.book-card');
+    for (i = 0; i < bookCards.length; i++) {
+        bookCards[i].remove();
+    }
+}
+
 const books = document.querySelector('.main-grid-container');
 
 function displayBooks(bookArray) {
+    removeBooks(); // stops duplicate books being added to the page
     for (i=0; i < bookArray.length; i++) {
         
         const book = document.createElement('div'); // creates book container
