@@ -84,7 +84,7 @@ closeDialogButton.addEventListener("click", () => {
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); // stops form data being sent away from the current page
+    e.preventDefault(); // stops form data being sent away from the current page and refreshing of the page on submit
     dialog.close();
 
     let title = document.getElementById('title').value;
