@@ -78,3 +78,29 @@ addBookButton.addEventListener("click", () => {
 closeDialogButton.addEventListener("click", () => {
     dialog.close();
 })
+
+// Creating Book obj of form data on click
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    dialog.close();
+
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let rating = document.getElementById('rating').value;
+    let radio = document.getElementsByName('read');
+    let read = '';
+    for (i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            read = radio[i].value;
+        };
+    };
+
+
+    newBook = new Book(title, author, pages, rating, read);
+    addBookToLibrary(newBook);
+    displayBooks(myLibrary);
+})

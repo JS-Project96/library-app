@@ -112,10 +112,11 @@ dialog[open]::backdrop {
     flex-direction: column;
 }
 
-#checkbox {
+#radio {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 3px;
 }
 
 input[type="text"], input[type="number"] {
