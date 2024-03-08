@@ -84,14 +84,15 @@ closeDialogButton.addEventListener("click", () => {
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); // stops form data being sent away from the current page
     dialog.close();
 
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
     let rating = document.getElementById('rating').value;
-    let radio = document.getElementsByName('read');
+    // creates an array of the radio button values and determines which is checked to use in creating a new book object 
+    let radio = document.getElementsByName('read'); 
     let read = '';
     for (i = 0; i < radio.length; i++) {
         if (radio[i].checked) {
