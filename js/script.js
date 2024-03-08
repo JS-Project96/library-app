@@ -35,6 +35,12 @@ function displayBooks(bookArray) {
         book.classList.add('book-card'); // adds book-card styling class to newly created book
         
         // Creates each text div for the book card
+
+        const remove = document.createElement('button');
+        remove.classList.add('remove-book');
+        const removeText = document.createTextNode('\u2716');
+        remove.appendChild(removeText);
+
         const title = document.createElement('div');
         const titleText = document.createTextNode(`"${bookArray[i].title}"`);
         title.appendChild(titleText);
@@ -52,20 +58,17 @@ function displayBooks(bookArray) {
         rating.appendChild(ratingText);
 
         const read = document.createElement('button');
+        read.classList.add('read-button');
         const readText = document.createTextNode(`${bookArray[i].read}`);
         read.appendChild(readText);
 
-        const remove = document.createElement('button');
-        const removeText = document.createTextNode('Remove Book');
-        remove.appendChild(removeText);
-        
         // Adds created divs to a book card
+        book.appendChild(remove);
         book.appendChild(title);
         book.appendChild(author);
         book.appendChild(pages);
         book.appendChild(rating);
         book.appendChild(read);
-        book.appendChild(remove);
 
         // Adds completed book card to html to display to user
         books.appendChild(book);

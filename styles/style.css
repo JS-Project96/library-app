@@ -62,7 +62,7 @@ header > div {
     font-size: 20px;
 }
 
-.book-card button {
+.read-button {
     min-width: 50%;
     cursor: pointer;
     font-family: "Madimi One", sans-serif;
@@ -71,6 +71,14 @@ header > div {
     background-color: #78350f;
     border: solid 3px #fffbeb;
     border-radius: 15px;
+}
+
+.remove-book {
+    background-color: #78350f;
+    color: #fed7aa;
+    border: none;
+    cursor: pointer;
+    margin-left: 70%;
 }
 
 /* Dialog */
@@ -124,7 +132,7 @@ input[type="text"], input[type="number"] {
     border: none;
 }
 
-input[type="checkbox"] {
+input[type="radio"] {
     cursor: pointer;
 }
 
