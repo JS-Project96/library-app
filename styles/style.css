@@ -148,3 +148,7 @@ button[type="submit"] {
     width: 50%;
     align-self: center;
 }
+
+button:hover {
+    transform: scale(1.2);
+}
