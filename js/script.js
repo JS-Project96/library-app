@@ -15,6 +15,7 @@ function Book(title, author, pages, rating, read) {
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
+    displayBooks(myLibrary);
 }
 
 // helper function for displaying all books in current library array to not produce duplicates
@@ -29,49 +30,63 @@ const books = document.querySelector('.main-grid-container');
 
 function displayBooks(bookArray) {
     removeBooks(); // stops duplicate books being added to the page
-    for (i=0; i < bookArray.length; i++) {
-        
-        const book = document.createElement('div'); // creates book container
-        book.classList.add('book-card'); // adds book-card styling class to newly created book
+    myLibrary.forEach((book, index) => {
+        console.log(`Index during loop: ${i}`);
+        const bookCard = document.createElement('div'); // creates book container
+        bookCard.classList.add('book-card', index); // adds book-card styling class to newly created book
         // Creates each text div for the book card
 
         const remove = document.createElement('button');
         remove.classList.add('remove-book');
+        remove.setAttribute('id', index);
         const removeText = document.createTextNode('\u2716');
         remove.appendChild(removeText);
 
         const title = document.createElement('div');
-        const titleText = document.createTextNode(`"${bookArray[i].title}"`);
+        const titleText = document.createTextNode(`"${bookArray[index].title}"`);
         title.appendChild(titleText);
 
         const author = document.createElement('div');
-        const authorText = document.createTextNode(`by ${bookArray[i].author}`);
+        const authorText = document.createTextNode(`by ${bookArray[index].author}`);
         author.appendChild(authorText);
 
         const pages = document.createElement('div');
-        const pagesText = document.createTextNode(`${bookArray[i].pages} pages`);
+        const pagesText = document.createTextNode(`${bookArray[index].pages} pages`);
         pages.appendChild(pagesText);
 
         const rating = document.createElement('div');
-        const ratingText = document.createTextNode(`${bookArray[i].rating} out of 10`);
+        const ratingText = document.createTextNode(`${bookArray[index].rating} out of 10`);
         rating.appendChild(ratingText);
 
         const read = document.createElement('button');
         read.classList.add('read-button');
-        const readText = document.createTextNode(`${bookArray[i].read}`);
+        const readText = document.createTextNode(`${bookArray[index].read}`);
         read.appendChild(readText);
 
         // Adds created divs to a book card
-        book.appendChild(remove);
-        book.appendChild(title);
-        book.appendChild(author);
-        book.appendChild(pages);
-        book.appendChild(rating);
-        book.appendChild(read);
+        bookCard.appendChild(remove);
+        bookCard.appendChild(title);
+        bookCard.appendChild(author);
+        bookCard.appendChild(pages);
+        bookCard.appendChild(rating);
+        bookCard.appendChild(read);
 
         // Adds completed book card to html to display to user
-        books.appendChild(book);
-    }
+        books.appendChild(bookCard);
+
+        remove.addEventListener('click', () => {
+            removeBook(index);
+        })
+
+        console.log(`Index at end of each loop: ${i}`)
+    })
+}
+
+function removeBook(bookIndex) {
+    console.log(`Book index: ${bookIndex}`);
+    myLibrary.splice(bookIndex,1);
+    console.log(myLibrary);
+    displayBooks(myLibrary);
 }
 
 // Modal dialog pop up
@@ -113,7 +128,6 @@ form.addEventListener('submit', (e) => {
 
     newBook = new Book(title, author, pages, rating, read);
     addBookToLibrary(newBook);
-    displayBooks(myLibrary);
 
     form.reset();
     dialog.close();
