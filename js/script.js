@@ -35,11 +35,11 @@ function displayBooks(bookArray) {
         bookCard.classList.add('book-card', index); // adds book-card styling class to newly created book
         // Creates each text div for the book card
 
-        const remove = document.createElement('button');
-        remove.classList.add('remove-book');
-        remove.setAttribute('id', index);
+        const removeBookButton = document.createElement('button');
+        removeBookButton.classList.add('remove-book');
+        removeBookButton.setAttribute('id', index);
         const removeText = document.createTextNode('\u2716');
-        remove.appendChild(removeText);
+        removeBookButton.appendChild(removeText);
 
         const title = document.createElement('div');
         const titleText = document.createTextNode(`"${book.title}"`);
@@ -57,27 +57,27 @@ function displayBooks(bookArray) {
         const ratingText = document.createTextNode(`${book.rating} out of 10`);
         rating.appendChild(ratingText);
 
-        const read = document.createElement('button');
-        read.classList.add('read-button');
+        const readToggleButton = document.createElement('button');
+        readToggleButton.classList.add('read-button');
         const readText = document.createTextNode(`${book.read}`);
-        read.appendChild(readText);
+        readToggleButton.appendChild(readText);
 
         // Adds created divs to a book card
-        bookCard.appendChild(remove);
+        bookCard.appendChild(removeBookButton);
         bookCard.appendChild(title);
         bookCard.appendChild(author);
         bookCard.appendChild(pages);
         bookCard.appendChild(rating);
-        bookCard.appendChild(read);
+        bookCard.appendChild(readToggleButton);
 
         // Adds completed book card to html to display to user
         books.appendChild(bookCard);
 
-        remove.addEventListener('click', () => {
+        removeBookButton.addEventListener('click', () => {
             removeBook(index);
         })
 
-        read.addEventListener('click', () => {
+        readToggleButton.addEventListener('click', () => {
             if (bookArray[index].read === 'Read') {
                 bookArray[index].read = 'Not read';
                 displayBooks(myLibrary);
