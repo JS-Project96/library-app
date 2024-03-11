@@ -76,6 +76,16 @@ function displayBooks(bookArray) {
         remove.addEventListener('click', () => {
             removeBook(index);
         })
+
+        read.addEventListener('click', () => {
+            if (bookArray[index].read === 'Read') {
+                bookArray[index].read = 'Not read';
+                displayBooks(myLibrary);
+            } else {
+                bookArray[index].read = 'Read';
+                displayBooks(myLibrary);
+            };
+        })
     })
 }
 
