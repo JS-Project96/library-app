@@ -31,7 +31,6 @@ const books = document.querySelector('.main-grid-container');
 function displayBooks(bookArray) {
     removeBooks(); // stops duplicate books being added to the page
     myLibrary.forEach((book, index) => {
-        console.log(`Index during loop: ${i}`);
         const bookCard = document.createElement('div'); // creates book container
         bookCard.classList.add('book-card', index); // adds book-card styling class to newly created book
         // Creates each text div for the book card
@@ -43,24 +42,24 @@ function displayBooks(bookArray) {
         remove.appendChild(removeText);
 
         const title = document.createElement('div');
-        const titleText = document.createTextNode(`"${bookArray[index].title}"`);
+        const titleText = document.createTextNode(`"${book.title}"`);
         title.appendChild(titleText);
 
         const author = document.createElement('div');
-        const authorText = document.createTextNode(`by ${bookArray[index].author}`);
+        const authorText = document.createTextNode(`by ${book.author}`);
         author.appendChild(authorText);
 
         const pages = document.createElement('div');
-        const pagesText = document.createTextNode(`${bookArray[index].pages} pages`);
+        const pagesText = document.createTextNode(`${book.pages} pages`);
         pages.appendChild(pagesText);
 
         const rating = document.createElement('div');
-        const ratingText = document.createTextNode(`${bookArray[index].rating} out of 10`);
+        const ratingText = document.createTextNode(`${book.rating} out of 10`);
         rating.appendChild(ratingText);
 
         const read = document.createElement('button');
         read.classList.add('read-button');
-        const readText = document.createTextNode(`${bookArray[index].read}`);
+        const readText = document.createTextNode(`${book.read}`);
         read.appendChild(readText);
 
         // Adds created divs to a book card
@@ -77,15 +76,11 @@ function displayBooks(bookArray) {
         remove.addEventListener('click', () => {
             removeBook(index);
         })
-
-        console.log(`Index at end of each loop: ${i}`)
     })
 }
 
 function removeBook(bookIndex) {
-    console.log(`Book index: ${bookIndex}`);
     myLibrary.splice(bookIndex,1);
-    console.log(myLibrary);
     displayBooks(myLibrary);
 }
 
