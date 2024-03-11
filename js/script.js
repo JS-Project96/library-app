@@ -33,7 +33,6 @@ function displayBooks(bookArray) {
         
         const book = document.createElement('div'); // creates book container
         book.classList.add('book-card'); // adds book-card styling class to newly created book
-        
         // Creates each text div for the book card
 
         const remove = document.createElement('button');
@@ -88,6 +87,7 @@ addBookButton.addEventListener("click", () => {
 
 // Close modal dialog on close button
 closeDialogButton.addEventListener("click", () => {
+    document.querySelector('form').reset();
     dialog.close();
 })
 
@@ -97,7 +97,6 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // stops form data being sent away from the current page and refreshing of the page on submit
-    dialog.close();
 
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
@@ -112,8 +111,10 @@ form.addEventListener('submit', (e) => {
         };
     };
 
-
     newBook = new Book(title, author, pages, rating, read);
     addBookToLibrary(newBook);
     displayBooks(myLibrary);
-})
+
+    form.reset();
+    dialog.close();
+});
