@@ -152,3 +152,19 @@ button[type="submit"] {
 button:hover {
     transform: scale(1.2);
 }
+
+/* Footer */
+
+.footer {
+    color: #78350f;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer img {
+    width: 1%;
+}
